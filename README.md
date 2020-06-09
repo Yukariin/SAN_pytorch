@@ -30,7 +30,7 @@ Scores calculated on validation dataset which consists of ~14K HR/LR patches for
 [SAN](https://drive.google.com/file/d/10d_bnCVuxMrfkrk-djaXw3uPcWajksEo/view?usp=sharing) - Scale factor x2 - Noise level 1
 
 ### Usage
-    python test.py --scale 2 --checkpoint path/to/model.pth --input path/to/image.jpg --output SR_output_x2.png
+    python test.py --scale 2 --checkpoint path/to/model.pth --image path/to/image.jpg --output SR_output_x2.png
 
 ## Citation
     @InProceedings{Dai_2019_CVPR,

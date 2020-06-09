@@ -21,7 +21,7 @@ Scores calculated on validation dataset which consists of ~14K HR/LR patches for
 | SAN   | 1           | 37.1034 | 0.9866  |
 
 ### Models
-[SAN](https://drive.google.com/file/d/10d_bnCVuxMrfkrk-djaXw3uPcWajksEo/view?usp=sharing) - Scale factor x2 - Noise level 0
+[SAN](https://drive.google.com/file/d/1bzRmFD7Xi8f38poKpzM8k_OSlKkBTaxi/view?usp=sharing) - Scale factor x2 - Noise level 0
 
 [SAN](https://drive.google.com/file/d/10d_bnCVuxMrfkrk-djaXw3uPcWajksEo/view?usp=sharing) - Scale factor x2 - Noise level 1
 

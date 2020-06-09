@@ -4,12 +4,17 @@ Second-order Attention Network for Single Image Super-resolution
 ## Pre-trained Models
 
 ### Data
+All models trained on the same anime-themed datased based on [Danbooru2019](https://www.gwern.net/Danbooru2019).
 Final dataset consists of 1000/100 (train/val) images.
 Original images are all PNG images at least 2K x 2K. Images downsampled to 2K by LANCZOS, that is they have 2K pixels on at least one of the axes (vertical or horizontal), and then cropped to multiple of 12 pixels on both axes.
 All images splitted into 96x96/192x192 (x2/x4) HR and 48x48 LR (with jpeg noise) overlapping patches. All HR patches filtered by it's gradient and variance, and stored in SQLite database.
 
 Image noise are from JPEG format only. Same as for [waifu2x](https://github.com/yu45020/Waifu2x).
 Noise level 1 means quality ranges uniformly from [75, 95]; level 2 means quality ranges uniformly from [50, 75].
+
+Anime - Scale factor x2 - Noise level 0 - [train](https://drive.google.com/file/d/1d-U6O8BGixNd0vESi19ymRt-1-4-0x43/view?usp=sharing) / [val](https://drive.google.com/file/d/1qWbFJSCBGryIFf5n8d8aQMr7xVgJ_14J/view?usp=sharing)
+
+Anime - Scale factor x2 - Noise level 1 - [train](https://drive.google.com/file/d/1PxLqqttxECnh6yj-KtvUBRBDUtyfrm7Q/view?usp=sharing) / [val](https://drive.google.com/file/d/1awEailakz0TJXyPdB5L4TCW7iztftyFK/view?usp=sharing)
 
 ### Scores
 Scores calculated on validation dataset which consists of ~14K HR/LR patches for scale factor of 2.

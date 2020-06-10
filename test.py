@@ -1,4 +1,6 @@
 import argparse
+import os
+import time
 
 from PIL import Image
 import torch
@@ -16,6 +18,8 @@ if __name__ == "__main__":
                         help='The filename of image to be completed.')
     parser.add_argument('--output', default='output.png', type=str,
                         help='Where to write output.')
+    parser.add_argument('--input_dir', type=str)
+    parser.add_argument('--output_dir', type=str)
     args = parser.parse_args()
 
     use_cuda = torch.cuda.is_available()
@@ -29,14 +33,34 @@ if __name__ == "__main__":
 
     splitter = ImageSplitter(scale=args.scale)
 
-    img = Image.open(args.image).convert('RGB')
-    patches = splitter.split(img)
+    if args.image and args.output:
+        img = Image.open(args.image).convert('RGB')
+        patches = splitter.split(img)
 
-    import time
-    start_time = time.time()
-    with torch.no_grad():
-        out = [model(p.to(device)) for p in patches]
-    print("Done in %.3f seconds!" % (time.time() - start_time))
+        start_time = time.time()
+        with torch.no_grad():
+            out = [model(p.to(device)) for p in patches]
+        print("Done in %.3f seconds!" % (time.time() - start_time))
 
-    out_img = splitter.merge(out)
-    out_img.save(args.output)
+        out_img = splitter.merge(out)
+        out_img.save(args.output)
+    elif args.input_dir and args.output_dir:
+        if not os.path.exists(args.output_dir):
+            os.makedirs(args.output_dir)
+
+        for root, dirs, files in os.walk(args.input_dir):
+            for name in files:
+                if any(name.endswith(ext) for ext in [".png", ".jpg", ".jpeg"]):
+                    input_fname = os.path.join(root, name)
+                    output_fname = os.path.join(args.output_dir, f'{os.path.splitext(name)[0]}_x{args.scale}.png')
+
+                    img = Image.open(input_fname).convert('RGB')
+                    patches = splitter.split(img)
+
+                    start_time = time.time()
+                    with torch.no_grad():
+                        out = [model(p.to(device)) for p in patches]
+                    print("Done in %.3f seconds!" % (time.time() - start_time))
+
+                    out_img = splitter.merge(out)
+                    out_img.save(output_fname)

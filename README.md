@@ -21,7 +21,7 @@ Scores calculated on validation dataset which consists of ~14K HR/LR patches for
 ​
 | Model | Noise level | PSNR(+) | SSIM(+) |
 | ----- | ----------- | ------- | ------- |
-| SAN   | 0           | 43.6532 | 0.9965  |
+| SAN   | 0           | 43.7363 | 0.9965  |
 | SAN   | 1           | 37.1034 | 0.9866  |
 
 ### Models

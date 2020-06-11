@@ -30,6 +30,8 @@ Scores calculated on validation dataset which consists of ~14K HR/LR patches for
 [SAN](https://drive.google.com/file/d/10d_bnCVuxMrfkrk-djaXw3uPcWajksEo/view?usp=sharing) - Scale factor x2 - Noise level 1
 
 ### Usage
+**Note:** SAN is scale-depedent model so you need to use corresponding model for specified scale factor. Using x2 model to do a x3/x4/x8 upscale produces **VERY** noisy samples.
+
     python test.py --scale 2 --checkpoint path/to/model.pth --image path/to/image.jpg --output SR_output_x2.png
 
 ## Citation

@@ -19,15 +19,18 @@ Anime - Scale factor x2 - Noise level 1 - [train](https://drive.google.com/file/
 ### Scores
 Scores calculated on validation dataset which consists of ~14K HR/LR patches for scale factor of 2.
 ​
-| Model | Noise level | PSNR(+) | SSIM(+) |
-| ----- | ----------- | ------- | ------- |
-| SAN   | 0           | 43.7363 | 0.9965  |
-| SAN   | 1           | 37.1034 | 0.9866  |
+| Model | Scale factor |Noise level | PSNR(+) | SSIM(+) |
+| ----- | ------------ | ---------- | ------- | ------- |
+| SAN   | 2            | 0          | 43.7363 | 0.9965  |
+| SAN   | 2            | 1          | 37.1034 | 0.9866  |
+| SAN   | 4            | 0          | 34.6585 | 0.9790  |
 
 ### Models
-[SAN](https://drive.google.com/file/d/1bzRmFD7Xi8f38poKpzM8k_OSlKkBTaxi/view?usp=sharing) - Scale factor x2 - Noise level 0
+[SAN](https://drive.google.com/file/d/1i64McPLgLn2WTOxVgevTahuslme_C_2D/view?usp=sharing) - Scale factor x2 - Noise level 0
 
 [SAN](https://drive.google.com/file/d/10d_bnCVuxMrfkrk-djaXw3uPcWajksEo/view?usp=sharing) - Scale factor x2 - Noise level 1
+
+[SAN](https://drive.google.com/file/d/16St4_8NlcFTfKrLR0hOlHrMfGVHn9eZS/view?usp=sharing) - Scale factor x4 - Noise level 0
 
 ### Usage
 **Note:** SAN is scale-depedent model so you need to use corresponding model for specified scale factor. Using x2 model to do a x3/x4/x8 upscale produces **VERY** noisy samples.
